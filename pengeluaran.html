@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetBuddy</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+.pengeluaran-summary {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.total-balance {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.summary-card {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+}
+
+.summary-card h3 {
+    font-size: 1.2rem;
+}
+
+.expenses-list {
+    margin-top: 1rem;
+}
+
+.expense-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.expense-details p {
+    margin: 0;
+    color: #444;
+}
+
+
+.text-danger {
+    color: #d94a38;
+}
+
+.expense-item .icon {
+    font-size: 1.8rem;
+    color: #395886;
+    margin-right: 1rem;
+}
+
+.expense-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.record-expense-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.record-expense-btn:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <input type="checkbox" name="" id="toggler">
+            <label for="toggler" class="toggle-btn">
+                <i class="lni lni-grid-alt"></i>
+                <a href="#" class="sidebar-link">
+                    <span>BudgetBuddy</span>
+                </a>
+            </label>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="index.html" class="sidebar-link">
+                        <i class="lni lni-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-bar-chart"></i>
+                        <span>Statistik</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-pie-chart"></i>
+                        <span>Analisis</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pengeluaran.html" class="sidebar-link">
+                        <i class="lni lni-wallet"></i>
+                        <span>Pengeluaran</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="profil.html" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Profil</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main">
+            <div class="dashboard-navbar">
+                <div class="navbar-title">
+                    <h2>Pengeluaran</h2>
+                </div>
+                <form action="#">
+                    <div class="nav-search">
+                        <input type="text" class="search-query" placeholder="Search...">
+                        <button class="btn" type="button">Search</button>
+                    </div>
+                </form>
+                <div class="navbar-content">
+                    <ul class="main-nav">
+                        <li class="user-link">
+                            <a href="#">
+                                <img src="profil.jpg" alt="Profile" class="avatar">
+                            </a>
+                            <div class="user-link-dropdown">
+                                <a href="profil.html" class="dropdown-item">Profile</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pengeluaran Content -->
+            <div class="content">
+                <div class="pengeluaran-summary">
+                    <p class="total">Total Saldo</p>
+                    <h1 class="total-balance">Rp 10.750.500</h1>
+                    <div class="summary-card">
+                        <div class="income">
+                            <p>Pendapatan</p>
+                            <h3 class="text-success">Rp 2.000.000</h3>
+                        </div>
+                        <div class="expenses">
+                            <p>Pengeluaran</p>
+                            <h3 class="text-danger">Rp 850.000</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="expenses-list">
+                    <h3>Bulan April</h3>
+                    <div class="expense-item">
+                        <div class="icon">
+                            <i class="lni lni-dinner"></i>
+                        </div>
+                        <div class="expense-details">
+                            <p class="expense-title">Makan</p>
+                            <p class="expense-date">1/10 - 10-24</p>
+                        </div>
+                        <div class="expense-amount text-danger">
+                            -Rp 350.000
+                        </div>
+                    </div>
+                    <div class="expense-item">
+                        <div class="icon">
+                            <i class="lni lni-car"></i>
+                        </div>
+                        <div class="expense-details">
+                            <p class="expense-title">Transportasi</p>
+                            <p class="expense-date">1/10 - 10-24</p>
+                        </div>
+                        <div class="expense-amount text-danger">
+                            -Rp 200.000
+                        </div>
+                    </div>
+                    <div class="expense-item">
+                        <div class="icon">
+                            <i class="lni lni-first-aid"></i>
+                        </div>
+                        <div class="expense-details">
+                            <p class="expense-title">Obat</p>
+                            <p class="expense-date">1/10 - 10-24</p>
+                        </div>
+                        <div class="expense-amount text-danger">
+                            -Rp 150.000
+                        </div>
+                    </div>
+                </div>
+                <button class="record-expense-btn">Record Expense</button>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-wrap">
+                    <div class="copyright-text">
+                        <p>© Copyright 2024 by <strong>BudgetBuddy</strong></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
