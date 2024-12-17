@@ -156,7 +156,7 @@ a.sidebar-link:hover {
 
 .btn {
     border: 0;
-    background-color: #395886;
+    background-color: #839586;
     color: #FFF;
     padding: 0.45rem 0.9rem;
     font-family: 'Poppins', sans-serif;
@@ -336,5 +336,7 @@ a.sidebar-link:hover {
     .dashboard-card {
         grid-template-columns: repeat(3, 1fr);
     }
+
+
 
 }

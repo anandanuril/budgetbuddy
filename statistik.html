@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetBuddy | Statistik</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      .navbar-title h2{
+        font-family: 'Poppins', sans-serif;
+        font-weight: bolder;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul.main-nav {
+        margin-bottom: 0;
+      }
+      
+      .main {
+        font-family :'Poppins',sans-serif;
+      }
+
+      .body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        background-color: #ffffff;
+        color: #333;
+      }
+        
+        /* Statistics Container */
+      .statistics-container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+      }
+        
+        /* Main Content */
+      .main-content {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+      }
+        
+        /* Header */
+      .header {
+        margin-bottom: 30px;
+      }
+        
+      .header h1 {
+        font-size: 28px;
+        color: #003f7f;
+      }
+        
+      .header p {
+        font-size: 16px;
+        color: #555;
+      }
+        
+        /* Section Styles */
+      section {
+        margin-bottom: 40px;
+      }
+        
+      section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+        
+      canvas {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+</head>
+
+<body>
+  <div class="statistics-container">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <input type="checkbox" name="" id="toggler">
+      <label for="toggler" class="toggle-btn">
+          <i class="lni lni-grid-alt"></i>
+          <a href="#" class="sidebar-link">
+              <span>BudgetBuddy</span>
+          </a>
+      </label>
+      <ul class="sidebar-nav">
+          <li class="sidebar-item">
+              <a href="dashboard.html" class="sidebar-link">
+                  <i class="lni lni-dashboard"></i>
+                  <span>Dashboard</span>
+              </a>
+          </li>
+          <li class="sidebar-item active">
+              <a href="statistik.html" class="sidebar-link">
+                  <i class="lni lni-bar-chart"></i>
+                  <span>Statistik</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a href="analysis.html" class="sidebar-link">
+                  <i class="lni lni-pie-chart"></i>
+                  <span>Analisis</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a href="pengeluaran.html" class="sidebar-link">
+                  <i class="lni lni-wallet"></i>
+                  <span>Pengeluaran</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a href="profil.html" class="sidebar-link">
+                  <i class="lni lni-user"></i>
+                  <span>Profil</span>
+              </a>
+          </li>
+      </ul>
+      <div class="sidebar-footer">
+          <a href="index.html" class="sidebar-link">
+              <i class="lni lni-exit"></i>
+              <span>Logout</span>
+          </a>
+      </div>
+  </aside>
+
+    <!-- Main Content -->
+    <div class="main" style="position: relative; padding-bottom: 100px;">
+      <div class="dashboard-navbar">
+          <div class="navbar-title">
+              <h2>Statistik</h2>
+          </div>
+          <form action="#">
+              <div class="nav-search">
+                  <input type="text" class="search-query" placeholder="Search...">
+                  <button class="btn" type="button">Search</button>
+              </div>
+          </form>
+          <div class="navbar-content">
+              <ul class="main-nav">
+                  <li class="user-link">
+                      <a href="#">
+                          <img src="profil.jpg" alt="Profile" class="avatar">
+                      </a>
+                      <div class="user-link-dropdown">
+                          <a href="profil.html" class="dropdown-item">Profile</a>
+                          <a href="index.html" class="dropdown-item">Logout</a>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <!-- Monthly Performance Section -->
+      <section class="performance">
+        <h2>Monthly Performance</h2>
+        <canvas id="monthlyPerformanceChart"></canvas>
+      </section>
+
+      <!-- Expense Breakdown Section -->
+      <section class="breakdown">
+        <h2>Expense Breakdown</h2>
+        <canvas id="expenseBreakdownChart"></canvas>
+      </section>
+
+      <!-- Trends Section -->
+      <section class="trends">
+        <h2>Trends</h2>
+        <canvas id="trendsChart"></canvas>
+      </section>
+      <footer>
+        <div class="footer-wrap" style="position: absolute; bottom: 0; width: 100%; left: 0;" >
+            <div class="copyright-text">
+                <p>© Copyright 2024 by <strong>BudgetBuddy</strong></p>
+            </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script1.js"></script>
+</body>
+</html>

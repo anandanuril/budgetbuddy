@@ -1,101 +1,153 @@
-<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BudgetBuddy</title>
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <div class="container">
-        <aside id="sidebar">
-            <input type="checkbox" name="" id="toggler">
-            <label for="toggler" class="toggle-btn">
-                <i class="lni lni-grid-alt"></i>
-                <a href="#" class="sidebar-link">
-                    <span>BudgetBuddy</span>
-                </a>
-            </label>
-            <ul class="sidebar-nav">
-                <li class="sidebar-item active">
-                    <a href="index.html" class="sidebar-link">
-                        <i class="lni lni-dashboard"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-bar-chart"></i>
-                        <span>Statistik</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-pie-chart"></i>
-                        <span>Analisis</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="pengeluaran.html" class="sidebar-link">
-                        <i class="lni lni-wallet"></i>
-                        <span>Pengeluaran</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="profil.html" class="sidebar-link">
-                        <i class="lni lni-user"></i>
-                        <span>Profil</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
-                    <i class="lni lni-exit"></i>
-                    <span>Logout</span>
-                </a>
-            </div>
-        </aside>
-        <div class="main">
-            <div class="dashboard-navbar">
-                <div class="navbar-title">
-                    <h2>Dashboard</h2>
-                </div>
-                <form action="#">
-                    <div class="nav-search">
-                        <input type="text" class="search-query" placeholder="Search...">
-                        <button class="btn" type="button">Search</button>
-                    </div>
-                </form>
-                <div class="navbar-content">
-                    <ul class="main-nav">
-                        <li class="user-link">
-                            <a href="#">
-                                <img src="profil.jpg" alt="Profile" class="avatar">
-                            </a>
-                            <div class="user-link-dropdown">
-                                <a href="profil.html" class="dropdown-item">Profile</a>
-                                <a href="#" class="dropdown-item">Logout</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content">
-                
-
-                
-            </div>
-            <footer>
-                <div class="footer-wrap">
-                    <div class="copyright-text">
-                        <p>© Copyright 2024 by <strong>BudgetBuddy</strong></p>
-                    </div>
-                </div>
-            </footer>
-        </div>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   BudgetBuddy | Login
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-50 flex items-center justify-center min-h-screen">
+  <div class="container mx-auto p-4 flex flex-col md:flex-row items-center justify-center">
+   <div class="w-full md:w-1/2 flex justify-center">
+    <div class="text-center">
+     <img alt="Illustration of people interacting with a large screen" class="w-full max-w-md mx-auto" height="400" src="https://png.pngtree.com/thumb_back/fh260/background/20220612/pngtree-orange-dollar-animated-sculpture-banking-money-photo-image_8430942.jpg" width="600"/>
+     <div class="mt-4 bg-red-100 text-red-600 p-4 rounded-md border-l-4 border-red-500">
+        BudgetBuddy,
+        <span class="font-family: 'Poppins'">
+            Solusi Kelola Keuangan Harianmu!
+        </span>
     </div>
-</body>
+    </div>
+   </div>
+   <div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-lg mt-8 md:mt-0">
+    <div class="text-center mb-8">
+     <img alt="Finance logo" class="mx-auto mb-4" height="100" src="data:image/png;base64,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" width="100"/>
+     <h1 class="text-2xl font-bold text-gray-800">
+      BudgetBuddy
+     </h1>
+     <p class="text-gray-600">
+      Log in Pengguna BudgetBuddy
+     </p>
+    </div>
+    <form action="dashboard.html" method="get">
+     <div class="mb-4">
+      <label class="sr-only" for="username">
+       Email
+      </label>
+      <div class="relative">
+       <input class="w-full p-4 pl-10 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" id="username" placeholder="E-mail" type="text"/>
+       <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+        <i class="fas fa-user text-gray-400">
+        </i>
+       </div>
+      </div>
+     </div>
+     <div class="mb-4">
+      <label class="sr-only" for="password">
+       Password
+      </label>
+      <div class="relative">
+       <input class="w-full p-4 pl-10 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" id="password" placeholder="••••••••" type="password"/>
+       <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+        <i class="fas fa-lock text-gray-400">
+        </i>
+       </div>
+       <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+        <i class="fas fa-eye text-gray-400">
+        </i>
+       </div>
+      </div>
+     </div>
+     <div class="flex justify-between items-center mb-6">
+      <a class="text-sm text-gray-500 hover:underline" href="#">
+       Lupa Password?
+      </a>
+     </div>
+     <button class="w-full bg-blue-900 text-white p-4 rounded-lg font-family Poppins" type="submit">
+      Masuk
+     </button>
+    
+    </form>
+    <div class="text-center mt-6">
+     <p class="text-gray-600">
+      Silahkan Login Menggunakan Akun
+      <span class="font-bold">
+       Terdaftar
+      </span>
+     </p>
+    </div>
+    <div class="text-center mt-4">
+     <button class="bg-yellow-500 text-white p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500">
+      <i class="fas fa-moon">
+      </i>
+      Mode Gelap
+     </button>
+    </div>
+    <div class="text-center mt-6">
+     <p class="text-gray-600">
+      Belum punya akun?
+      <a class="text-blue-600 Poppins:underline" href="#" onclick="document.getElementById('signup-modal').classList.remove('hidden')">
+       Daftar di sini
+      </a>
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden" id="signup-modal">
+   <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+     Sign Up
+    </h2>
+    <form>
+     <div class="mb-4">
+      <label class="sr-only" for="name">
+       Name
+      </label>
+      <div class="relative">
+       <input class="w-full p-4 pl-10 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" id="name" placeholder="Nama" type="text"/>
+       <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+        <i class="fas fa-user text-gray-400">
+        </i>
+       </div>
+      </div>
+     </div>
+     <div class="mb-4">
+      <label class="sr-only" for="email">
+       Email
+      </label>
+      <div class="relative">
+       <input class="w-full p-4 pl-10 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" placeholder="Email" type="email"/>
+       <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+        <i class="fas fa-envelope text-gray-400">
+        </i>
+       </div>
+      </div>
+     </div>
+     <div class="mb-4">
+      <label class="sr-only" for="signup-password">
+       Password
+      </label>
+      <div class="relative">
+       <input class="w-full p-4 pl-10 border rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" id="signup-password" placeholder="Password" type="password"/>
+       <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+        <i class="fas fa-lock text-gray-400">
+        </i>
+       </div>
+      </div>
+     </div>
+     <button class="w-full bg-blue-600 text-white p-4 rounded-lg font-bold Poppins:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" type="submit">
+      Daftar
+     </button>
+    </form>
+    <div class="text-center mt-6">
+     <button class="text-gray-600 Poppins" onclick="document.getElementById('signup-modal').classList.add('hidden')">
+      Batal
+     </button>
+    </div>
+   </div>
+  </div>
+ </body>
 </html>

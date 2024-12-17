@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BudgetBuddy</title>
+    <title>BudgetBuddy | Pengeluaran</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -88,6 +88,84 @@
     background-color: #0056b3;
 }
 
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.summary-card .card {
+    margin: 0 1rem;
+}
+
+.total-card {
+    margin: 0 auto;
+    max-width: 300px;
+    background: #f8f9fa;
+}
+
+.income-card, .expenses-card {
+    padding: 1.5rem;
+    transform: scale(1.05);
+    font-size: 1.1rem;
+}
+
+.income-card {
+    background-color: #e2fbe6;
+}
+
+.expenses-card {
+    background-color: #ffe6e6;
+}
+
+.month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.calendar-icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.calendar-icon:hover {
+    color: #0056b3;
+}
+
+.month-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 150px;
+    z-index: 10;
+    margin-top: 0.5rem;
+}
+
+.month-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.month-dropdown li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.month-dropdown li:hover {
+    background-color: #007bff;
+    color: white;
+}
 </style>
 
 <body>
@@ -103,19 +181,19 @@
             </label>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="index.html" class="sidebar-link">
+                    <a href="dashboard.html" class="sidebar-link">
                         <i class="lni lni-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="statistik.html" class="sidebar-link">
                         <i class="lni lni-bar-chart"></i>
                         <span>Statistik</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="analysis.html" class="sidebar-link">
                         <i class="lni lni-pie-chart"></i>
                         <span>Analisis</span>
                     </a>
@@ -134,7 +212,7 @@
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
+                <a href="index.html" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>
@@ -161,7 +239,7 @@
                             </a>
                             <div class="user-link-dropdown">
                                 <a href="profil.html" class="dropdown-item">Profile</a>
-                                <a href="#" class="dropdown-item">Logout</a>
+                                <a href="index.html" class="dropdown-item">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -171,21 +249,42 @@
             <!-- Pengeluaran Content -->
             <div class="content">
                 <div class="pengeluaran-summary">
-                    <p class="total">Total Saldo</p>
-                    <h1 class="total-balance">Rp 10.750.500</h1>
+                    <div class="card total-card">
+                        <p class="total">Total Saldo</p>
+                        <h1 class="total-balance">Rp 10.750.500</h1>
+                    </div>
                     <div class="summary-card">
-                        <div class="income">
+                        <div class="card income-card">
                             <p>Pendapatan</p>
                             <h3 class="text-success">Rp 2.000.000</h3>
                         </div>
-                        <div class="expenses">
+                        <div class="card expenses-card">
                             <p>Pengeluaran</p>
                             <h3 class="text-danger">Rp 850.000</h3>
                         </div>
                     </div>
-                </div>
+                </div>                
                 <div class="expenses-list">
-                    <h3>Bulan April</h3>
+                    <div class="month-header">
+                        <h3>Bulan April</h3>
+                        <i class="lni lni-calendar calendar-icon" id="calendarIcon"></i>
+                    </div>
+                    <div class="month-dropdown" id="monthDropdown">
+                        <ul>
+                            <li data-month="Januari">Januari</li>
+                            <li data-month="Februari">Februari</li>
+                            <li data-month="Maret">Maret</li>
+                            <li data-month="April">April</li>
+                            <li data-month="Mei">Mei</li>
+                            <li data-month="Juni">Juni</li>
+                            <li data-month="Juli">Juli</li>
+                            <li data-month="Agustus">Agustus</li>
+                            <li data-month="September">September</li>
+                            <li data-month="Oktober">Oktober</li>
+                            <li data-month="November">November</li>
+                            <li data-month="Desember">Desember</li>
+                        </ul>
+                    </div>
                     <div class="expense-item">
                         <div class="icon">
                             <i class="lni lni-dinner"></i>
@@ -236,5 +335,31 @@
             </footer>
         </div>
     </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const calendarIcon = document.getElementById("calendarIcon");
+        const monthDropdown = document.getElementById("monthDropdown");
+        const monthTitle = document.querySelector(".month-header h3");
+        
+        calendarIcon.addEventListener("click", () => {
+            monthDropdown.style.display = 
+                monthDropdown.style.display === "block" ? "none" : "block";
+        });
+        
+        monthDropdown.querySelectorAll("li").forEach((item) => {
+            item.addEventListener("click", () => {
+                const selectedMonth = item.getAttribute("data-month");
+                monthTitle.textContent = `Bulan ${selectedMonth}`;
+                monthDropdown.style.display = "none"; // Sembunyikan dropdown
+            });
+        });
+        
+        document.addEventListener("click", (e) => {
+            if (!calendarIcon.contains(e.target) && !monthDropdown.contains(e.target)) {
+                monthDropdown.style.display = "none";
+            }
+        });
+    });
+    </script>        
 </body>
 </html>
